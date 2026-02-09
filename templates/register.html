@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Register for Placement Portal</h2>
+<p>Please select your user type to create a new account.</p>
+
+<div class="grid-container">
+    <div class="card">
+        <h3>Student Registration</h3>
+        <p>Register as a student to access job opportunities and manage your profile.</p>
+        <a href="{{ url_for('student_register') }}" class="btn">Register as Student</a>
+    </div>
+    
+    <div class="card">
+        <h3>Company Registration</h3>
+        <p>Register as a company to post jobs and recruit students.</p>
+        <a href="{{ url_for('company_register') }}" class="btn btn-success">Register as Company</a>
+    </div>
+</div>
+
+<div>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</div>
+{% endblock %}

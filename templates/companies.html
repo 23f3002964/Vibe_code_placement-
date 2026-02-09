@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Company Portal</h2>
+<p>Welcome to the company portal. Post job openings, view student profiles, and manage your recruitment process.</p>
+
+<div class="grid-container">
+    <div class="card">
+        <h3>Post New Job</h3>
+        <p>Create and publish new job or internship opportunities.</p>
+        <button class="btn">Create Job Posting</button>
+    </div>
+    
+    <div class="card">
+        <h3>Manage Applications</h3>
+        <p>Review and manage applications received for your positions.</p>
+        <button class="btn btn-success">View Applications</button>
+    </div>
+    
+    <div class="card">
+        <h3>Student Database</h3>
+        <p>Browse and search student profiles and resumes.</p>
+        <button class="btn btn-warning">Search Students</button>
+    </div>
+</div>
+
+<h3>Your Active Job Postings</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Applications</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dynamic job postings would appear here -->
+    </tbody>
+</table>
+
+<h3>Upcoming Recruitment Events</h3>
+<ul>
+    <!-- Dynamic event listings would appear here -->
+</ul>
+{% endblock %}

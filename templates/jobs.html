@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Job Opportunities</h2>
+<p>Explore current job and internship opportunities available through the placement portal.</p>
+
+<div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3>All Available Positions</h3>
+        <div>
+            <input type="text" placeholder="Search positions..." style="padding: 0.5rem; margin-right: 1rem; border: 1px solid #ccc; border-radius: 4px;">
+            <select style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                <option>All Categories</option>
+                <option>Technology</option>
+                <option>Business</option>
+                <option>Engineering</option>
+                <option>Marketing</option>
+                <option>Design</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <!-- Dynamic job listings would appear here -->
+    </div>
+</div>
+
+<h3>Featured Companies</h3>
+<div class="grid-container">
+    <!-- Dynamic company listings would appear here -->
+</div>
+{% endblock %}

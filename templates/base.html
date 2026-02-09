@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}Placement Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            {% if current_user and current_user.is_authenticated %}
+                {% if current_user.user_type == 'student' %}
+                    <li><a href="{{ url_for('students') }}">My Dashboard</a></li>
+                {% elif current_user.user_type == 'company' %}
+                    <li><a href="{{ url_for('companies') }}">Company Portal</a></li>
+                {% elif current_user.is_admin_role() %}
+                    <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 University Placement Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

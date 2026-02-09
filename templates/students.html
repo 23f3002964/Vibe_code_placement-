@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Student Dashboard</h2>
+<p>Welcome to your student dashboard. Here you can manage your profile, view job opportunities, and track your applications.</p>
+
+<div class="grid-container">
+    <div class="card">
+        <h3>My Profile</h3>
+        <p>Update your personal information, resume, and skills.</p>
+        <button class="btn">Edit Profile</button>
+    </div>
+    
+    <div class="card">
+        <h3>Job Applications</h3>
+        <p>Track the status of your submitted applications.</p>
+        <button class="btn btn-success">View Applications</button>
+    </div>
+    
+    <div class="card">
+        <h3>Resources</h3>
+        <p>Access study materials, interview tips, and career guidance.</p>
+        <button class="btn btn-warning">Browse Resources</button>
+    </div>
+</div>
+
+<h3>Available Opportunities</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Company</th>
+            <th>Deadline</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dynamic job listings would appear here -->
+    </tbody>
+</table>
+
+<h3>Upcoming Events</h3>
+<ul>
+    <!-- Dynamic event listings would appear here -->
+</ul>
+{% endblock %}

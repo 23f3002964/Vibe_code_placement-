@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Administrator panel for managing the placement portal system.</p>
+
+<div class="grid-container">
+    <div class="card" style="text-align: center; background-color: #e3f2fd;">
+        <h3>Total Students</h3>
+        <p style="font-size: 2em; font-weight: bold; color: #1976d2;">{{ total_students }}</p>
+    </div>
+    
+    <div class="card" style="text-align: center; background-color: #e8f5e9;">
+        <h3>Total Companies</h3>
+        <p style="font-size: 2em; font-weight: bold; color: #388e3c;">{{ total_companies }}</p>
+    </div>
+    
+    <div class="card" style="text-align: center; background-color: #fff3e0;">
+        <h3>Total Jobs</h3>
+        <p style="font-size: 2em; font-weight: bold; color: #f57c00;">{{ total_jobs }}</p>
+    </div>
+    
+    <div class="card" style="text-align: center; background-color: #fce4ec;">
+        <h3>Total Applications</h3>
+        <p style="font-size: 2em; font-weight: bold; color: #c2185b;">{{ total_applications }}</p>
+    </div>
+</div>
+
+<div class="grid-container">
+    <div class="card">
+        <h3>Manage Users</h3>
+        <p>Add, edit, or remove student and company accounts.</p>
+        <a href="#" class="btn">User Management</a>
+    </div>
+    
+    <div class="card">
+        <h3>Job Postings</h3>
+        <p>Moderate and approve job listings.</p>
+        <a href="#" class="btn btn-success">Review Posts</a>
+    </div>
+    
+    <div class="card">
+        <h3>System Analytics</h3>
+        <p>View statistics and usage metrics.</p>
+        <a href="#" class="btn">View Reports</a>
+    </div>
+    
+    <div class="card">
+        <h3>System Settings</h3>
+        <p>Configure system-wide settings and preferences.</p>
+        <a href="#" class="btn btn-danger">Configure</a>
+    </div>
+</div>
+
+<h3>Recent Activity</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>User</th>
+            <th>Action</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Dynamic content would go here -->
+    </tbody>
+</table>
+
+<h3>System Status</h3>
+<div class="grid-container">
+    <div class="card" style="background-color: #e8f5e9;">
+        <h4>Users</h4>
+        <p>Active: {{ total_students + total_companies }}</p>
+        <p>New Today: 0</p>
+    </div>
+    <div class="card" style="background-color: #e3f2fd;">
+        <h4>Jobs</h4>
+        <p>Active: {{ total_jobs }}</p>
+        <p>New This Week: 0</p>
+    </div>
+    <div class="card" style="background-color: #fff3e0;">
+        <h4>Applications</h4>
+        <p>Pending: {{ total_applications }}</p>
+        <p>Processed: 0</p>
+    </div>
+    <div class="card" style="background-color: #fce4ec;">
+        <h4>Issues</h4>
+        <p>Pending: 0</p>
+        <p>Critical: 0</p>
+    </div>
+</div>
+{% endblock %}

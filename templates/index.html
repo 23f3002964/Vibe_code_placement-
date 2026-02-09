@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome to the University Placement Portal</h2>
+<p>The University Placement Portal connects talented students with leading companies for internships and job opportunities.</p>
+
+<div class="grid-container">
+    <div class="card">
+        <h3>For Students</h3>
+        <p>Find your dream job or internship opportunity. Access resources to improve your skills and interview preparation.</p>
+        <a href="{{ url_for('students') }}" class="btn">Student Dashboard</a>
+    </div>
+    
+    <div class="card">
+        <h3>For Companies</h3>
+        <p>Post job openings and find the best talent from our university. Connect with skilled students ready for opportunities.</p>
+        <a href="{{ url_for('companies') }}" class="btn btn-success">Company Portal</a>
+    </div>
+</div>
+
+<h3>Recent Job Openings</h3>
+<ul>
+    <!-- Dynamic job listings would appear here -->
+</ul>
+
+<h3>Upcoming Events</h3>
+<ul>
+    <!-- Dynamic event listings would appear here -->
+</ul>
+{% endblock %}

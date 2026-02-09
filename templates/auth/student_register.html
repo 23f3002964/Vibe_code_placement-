@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Student Registration</h2>
+<p>Create a student account to access job opportunities and manage your profile.</p>
+
+<div class="card" style="max-width: 500px; margin: 1rem auto;">
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="student_id">Student ID</label>
+            <input type="text" class="form-control" id="student_id" name="student_id">
+        </div>
+        
+        <div class="form-group">
+            <label for="course">Course/Program</label>
+            <input type="text" class="form-control" id="course" name="course">
+        </div>
+        
+        <div class="form-group">
+            <label for="year">Year of Study</label>
+            <select class="form-control" id="year" name="year">
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+                <option value="graduate">Graduate</option>
+            </select>
+        </div>
+        
+        <div style="margin-top: 1rem;">
+            <button type="submit" class="btn">Register</button>
+        </div>
+    </form>
+</div>
+
+<div>
+    <p>Already have an account? <a href="{{ url_for('student_login') }}">Login as Student</a></p>
+</div>
+
+<!-- Display flash messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ 'danger' if category == 'error' else category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+{% endblock %}
